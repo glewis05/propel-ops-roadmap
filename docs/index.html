@@ -7,9 +7,10 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #eee; overflow-x: auto; }
-        .roadmap-container { padding: 20px; min-width: 1560px; }
+        .roadmap-container { padding: 20px; min-width: 4360px; }
         h1 { color: #fff; margin-bottom: 10px; }
-        .subtitle { color: #888; margin-bottom: 20px; }
+        .subtitle { color: #888; margin-bottom: 5px; }
+        .stats { color: #666; margin-bottom: 20px; font-size: 12px; }
         .timeline-wrapper { position: relative; margin-left: 150px; }
         .month-header { display: flex; height: 60px; border-bottom: 1px solid #333; }
         .month { width: 80px; text-align: center; border-right: 1px solid #333; padding-top: 10px; }
@@ -18,27 +19,42 @@
         .rows-container { position: relative; }
         .row { height: 40px; border-bottom: 1px solid #222; position: relative; }
         .row:nth-child(even) { background: rgba(255,255,255,0.02); }
-        .project-bar { position: absolute; height: 28px; top: 6px; border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: 12px; font-weight: 500; color: #fff; cursor: pointer; transition: transform 0.1s, box-shadow 0.1s; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+        .project-bar { position: absolute; height: 28px; border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: 12px; font-weight: 500; color: #fff; cursor: pointer; transition: transform 0.1s, box-shadow 0.1s; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
         .project-bar:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 100; }
         .project-bar.status-planned { opacity: 0.7; }
-        .holiday-marker { position: absolute; top: 0; width: 2px; background: rgba(255,255,255,0.3); z-index: 5; }
-        .holiday-icon { position: absolute; top: -25px; transform: translateX(-50%); font-size: 16px; }
-        .today-line { position: absolute; top: 0; width: 2px; background: #ef4444; z-index: 10; }
+        .project-bar.status-on-hold { opacity: 0.5; border: 2px dashed #fff; }
+        .project-bar.status-at-risk { border: 2px solid #ef4444; }
+        .project-bar.status-completed { opacity: 0.4; }
+        .holiday-marker { position: absolute; width: 2px; background: rgba(255,255,255,0.15); z-index: 5; }
+        .holiday-icon { position: absolute; top: -25px; transform: translateX(-50%); font-size: 14px; }
+        .today-line { position: absolute; width: 3px; background: #ef4444; z-index: 10; border-radius: 2px; }
         .legend { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
         .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
         .legend-color { width: 20px; height: 12px; border-radius: 2px; }
         .row-labels { position: absolute; left: 0; top: 60px; width: 140px; }
         .row-label { height: 40px; display: flex; align-items: center; padding-right: 10px; font-size: 11px; color: #666; justify-content: flex-end; }
+        .status-legend { display: flex; gap: 15px; margin-top: 10px; font-size: 11px; color: #888; }
+        .status-legend span { display: flex; align-items: center; gap: 4px; }
     </style>
 </head>
 <body>
     <div class="roadmap-container">
         <h1>Propel Operations Roadmap</h1>
-        <p class="subtitle">Generated: 2026-01-19 10:56 | 1 projects</p>
+        <p class="subtitle">Generated: 2026-01-19 12:14 | 29 projects</p>
+        <p class="stats">at_risk: 3 | in_progress: 8 | on_hold: 4 | planned: 14</p>
         <div class="legend">
+            <div class="legend-item"><div class="legend-color" style="background:#50E3C2"></div>GRX</div>
             <div class="legend-item"><div class="legend-color" style="background:#4A90E2"></div>P4M</div>
+            <div class="legend-item"><div class="legend-color" style="background:#F5A623"></div>PLAT</div>
+            <div class="legend-item"><div class="legend-color" style="background:#9013FE"></div>PR4M</div>
         </div>
-        <div style="position: relative;">
+        <div class="status-legend">
+            <span><div style="width:12px;height:12px;background:#4A90E2;opacity:0.7;border-radius:2px;"></div> Planned</span>
+            <span><div style="width:12px;height:12px;background:#4A90E2;border-radius:2px;"></div> In Progress</span>
+            <span><div style="width:12px;height:12px;background:#4A90E2;opacity:0.5;border:1px dashed #fff;border-radius:2px;"></div> On Hold</span>
+            <span><div style="width:12px;height:12px;background:#4A90E2;border:2px solid #ef4444;border-radius:2px;"></div> At Risk</span>
+        </div>
+        <div style="position: relative; margin-top: 20px;">
             <div class="row-labels">
                 <div class="row-label">Row 1</div>
                 <div class="row-label">Row 2</div>
@@ -50,16 +66,6 @@
                 <div class="row-label">Row 8</div>
                 <div class="row-label">Row 9</div>
                 <div class="row-label">Row 10</div>
-                <div class="row-label">Row 11</div>
-                <div class="row-label">Row 12</div>
-                <div class="row-label">Row 13</div>
-                <div class="row-label">Row 14</div>
-                <div class="row-label">Row 15</div>
-                <div class="row-label">Row 16</div>
-                <div class="row-label">Row 17</div>
-                <div class="row-label">Row 18</div>
-                <div class="row-label">Row 19</div>
-                <div class="row-label">Row 20</div>
             </div>
             <div class="timeline-wrapper">
                 <div class="month-header">
@@ -92,30 +98,48 @@
                     <div class="row" data-row="8"></div>
                     <div class="row" data-row="9"></div>
                     <div class="row" data-row="10"></div>
-                    <div class="row" data-row="11"></div>
-                    <div class="row" data-row="12"></div>
-                    <div class="row" data-row="13"></div>
-                    <div class="row" data-row="14"></div>
-                    <div class="row" data-row="15"></div>
-                    <div class="row" data-row="16"></div>
-                    <div class="row" data-row="17"></div>
-                    <div class="row" data-row="18"></div>
-                    <div class="row" data-row="19"></div>
-                    <div class="row" data-row="20"></div>
                 </div>
-                <div class="project-bar status-planned" style="left:81px; width:197px; top:66px; background:#4A90E2;" title="Test Roadmap Project">Test Project</div>
-                <div class="holiday-marker" style="left:81px; height:800px; top:60px;"><span class="holiday-icon">🇺🇸</span></div>
-                <div class="holiday-marker" style="left:310px; height:800px; top:60px;"><span class="holiday-icon">🦃</span></div>
-                <div class="holiday-marker" style="left:384px; height:800px; top:60px;"><span class="holiday-icon">🎄</span></div>
-                <div class="holiday-marker" style="left:402px; height:800px; top:60px;"><span class="holiday-icon">🎆</span></div>
-                <div class="holiday-marker" style="left:449px; height:800px; top:60px;"><span class="holiday-icon">✊</span></div>
-                <div class="holiday-marker" style="left:523px; height:800px; top:60px;"><span class="holiday-icon">🎩</span></div>
-                <div class="holiday-marker" style="left:781px; height:800px; top:60px;"><span class="holiday-icon">🇺🇸</span></div>
-                <div class="holiday-marker" style="left:886px; height:800px; top:60px;"><span class="holiday-icon">🎆</span></div>
-                <div class="holiday-marker" style="left:1057px; height:800px; top:60px;"><span class="holiday-icon">🇺🇸</span></div>
-                <div class="holiday-marker" style="left:1267px; height:800px; top:60px;"><span class="holiday-icon">🦃</span></div>
-                <div class="holiday-marker" style="left:1344px; height:800px; top:60px;"><span class="holiday-icon">🎄</span></div>
-                <div class="today-line" style="left:449px; height:800px; top:60px;"></div>
+                <div class="project-bar status-in-progress" style="left:178px; width:37px; top:66px; background:#4A90E2;" title="Portland Launch\nStatus: in_progress\n2025-10-08 to 2025-10-22">Portland</div>
+                <div class="project-bar status-at-risk" style="left:320px; width:79px; top:66px; background:#F5A623;" title="NCCN & Content Updates - Q4 2025\nStatus: at_risk\n2025-12-01 to 2025-12-31">⭐ NCCN & Content Updates Q4</div>
+                <div class="project-bar status-planned" style="left:441px; width:30px; top:66px; background:#F5A623;" title="NCCN User Acceptance Testing\nStatus: planned\n2026-01-16 to 2026-01-27">NCCN UAT</div>
+                <div class="project-bar status-planned" style="left:522px; width:30px; top:66px; background:#F5A623;" title="Maintenance Window - February 2026\nStatus: planned\n2026-02-16 to 2026-02-27">Maintenance Window Feb</div>
+                <div class="project-bar status-planned" style="left:743px; width:30px; top:66px; background:#F5A623;" title="Maintenance Window - May 2026\nStatus: planned\n2026-05-11 to 2026-05-22">Maintenance Window May</div>
+                <div class="project-bar status-planned" style="left:798px; width:77px; top:66px; background:#F5A623;" title="NCCN & Content Updates - Q2 2026\nStatus: planned\n2026-06-01 to 2026-06-30">NCCN & Content Updates Q2</div>
+                <div class="project-bar status-planned" style="left:1040px; width:76px; top:66px; background:#F5A623;" title="NCCN & Content Updates - Q3 2026\nStatus: planned\n2026-09-01 to 2026-09-30">NCCN & Content Updates Q3</div>
+                <div class="project-bar status-planned" style="left:1237px; width:53px; top:66px; background:#F5A623;" title="Maintenance Window - Q4 2026\nStatus: planned\n2026-11-15 to 2026-12-05">Maintenance Window Q4</div>
+                <div class="project-bar status-in-progress" style="left:231px; width:100px; top:106px; background:#9013FE;" title="Precision4ME - Mission Clinic\nStatus: in_progress\n2025-10-28 to 2025-12-05\nLaunch: January 13, 2026">⭐ Px4M Mission</div>
+                <div class="project-bar status-at-risk" style="left:407px; width:165px; top:106px; background:#9013FE;" title="Precision4ME - SoCal (St. Joseph Orange, St Jude Medical)\nStatus: at_risk\n2026-01-03 to 2026-03-07">Px4M SoCal</div>
+                <div class="project-bar status-planned" style="left:940px; width:171px; top:106px; background:#9013FE;" title="Precision4ME - SoCal Q3 (CJN, CSJ, CHC)\nStatus: planned\n2026-07-25 to 2026-09-28">Px4M SoCal Q3</div>
+                <div class="project-bar status-in-progress" style="left:268px; width:276px; top:146px; background:#50E3C2;" title="GenoRx Population Program\nStatus: in_progress\n2025-11-11 to 2026-02-24\nPriority for Providence Genomics">⭐ GenoRx Program</div>
+                <div class="project-bar status-planned" style="left:559px; width:168px; top:146px; background:#4A90E2;" title="Prevention4ME - Montana (BIC, Grant Creek, NowCare)\nStatus: planned\n2026-03-02 to 2026-05-05">P4M Montana</div>
+                <div class="project-bar status-at-risk" style="left:909px; width:168px; top:146px; background:#4A90E2;" title="Prevention4ME - SoCal (CJN WHI, CJN Mammography, PSJHC)\nStatus: at_risk\n2026-07-13 to 2026-09-15">P4M SoCal</div>
+                <div class="project-bar status-planned" style="left:1132px; width:166px; top:146px; background:#4A90E2;" title="Prevention4ME - SoCal Q4 (MH Breast Centers)\nStatus: planned\n2026-10-06 to 2026-12-08">P4M SoCal Q4</div>
+                <div class="project-bar status-in-progress" style="left:160px; width:118px; top:186px; background:#F5A623;" title="Helix Ordering Integration\nStatus: in_progress\n2025-10-01 to 2025-11-15">Helix Ordering</div>
+                <div class="project-bar status-planned" style="left:431px; width:283px; top:186px; background:#F5A623;" title="Discover Dashboard Development\nStatus: planned\n2026-01-12 to 2026-04-30\nDruthi assigned">Discover Dashboard</div>
+                <div class="project-bar status-on-hold" style="left:964px; width:168px; top:186px; background:#4A90E2;" title="Prevention4ME - SoCal Q3 (Breast Centers, Endo)\nStatus: on_hold\n2026-08-03 to 2026-10-06\nEPIC Notification dependency">P4M SoCal Q3 Breast</div>
+                <div class="project-bar status-in-progress" style="left:160px; width:239px; top:226px; background:#F5A623;" title="Results Troubleshooting\nStatus: in_progress\n2025-10-01 to 2025-12-31">Results Troubleshooting</div>
+                <div class="project-bar status-planned" style="left:431px; width:194px; top:226px; background:#4A90E2;" title="SoCal P4M CARE+ Data Migration\nStatus: planned\n2026-01-12 to 2026-03-27\nRequired for Q2-Q4 launches">SoCal CARE+ Data Migration</div>
+                <div class="project-bar status-planned" style="left:717px; width:158px; top:226px; background:#F5A623;" title="Unified Patient Dashboard - Discover Integration\nStatus: planned\n2026-05-01 to 2026-06-30">Unified Patient Dashboard</div>
+                <div class="project-bar status-in-progress" style="left:241px; width:239px; top:266px; background:#F5A623;" title="Email Troubleshooting\nStatus: in_progress\n2025-11-01 to 2026-01-31">Email Troubleshooting</div>
+                <div class="project-bar status-planned" style="left:431px; width:194px; top:266px; background:#F5A623;" title="Platform Extract Build Q1 2026\nStatus: planned\n2026-01-12 to 2026-03-27\nRequired for Q2-Q4 launches">P4M Extract Build</div>
+                <div class="project-bar status-in-progress" style="left:197px; width:226px; top:306px; background:#F5A623;" title="Helix Results to Epic Integration\nStatus: in_progress\n2025-10-15 to 2026-01-09">Helix Results Epic Integration</div>
+                <div class="project-bar status-on-hold" style="left:486px; width:189px; top:306px; background:#F5A623;" title="TC On/Off & Competing Mortality Feature\nStatus: on_hold\n2026-02-02 to 2026-04-15">TC On/Off & Mortality</div>
+                <div class="project-bar status-on-hold" style="left:725px; width:139px; top:306px; background:#4A90E2;" title="Prevention4ME Consent and Summary Print Feature\nStatus: on_hold\n2026-05-04 to 2026-06-26\nAs a clinician, I can print either or both the clinical summary or consent for upload">Consent & Summary Print</div>
+                <div class="project-bar status-in-progress" style="left:173px; width:260px; top:346px; background:#F5A623;" title="NCCN Rules Admin App - Phase 3\nStatus: in_progress\n2025-10-06 to 2026-01-13\nRule Engine Governance Tool Development - Dataverse & Power Apps Build">NCCN Governance App Phase 3</div>
+                <div class="project-bar status-on-hold" style="left:557px; width:197px; top:346px; background:#F5A623;" title="DNA Genotech API Integration\nStatus: on_hold\n2026-03-01 to 2026-05-15">DNA Genotech API</div>
+                <div class="project-bar status-planned" style="left:651px; width:213px; top:386px; background:#F5A623;" title="RGC / Arboretum Integration\nStatus: planned\n2026-04-06 to 2026-06-26">RGC Arboretum</div>
+                <div class="holiday-marker" style="left:191px; height:400px; top:60px;" title="Columbus Day"><span class="holiday-icon">🇺🇸</span></div>
+                <div class="holiday-marker" style="left:310px; height:400px; top:60px;" title="Thanksgiving"><span class="holiday-icon">🦃</span></div>
+                <div class="holiday-marker" style="left:383px; height:400px; top:60px;" title="Christmas"><span class="holiday-icon">🎄</span></div>
+                <div class="holiday-marker" style="left:402px; height:400px; top:60px;" title="New Year"><span class="holiday-icon">🎆</span></div>
+                <div class="holiday-marker" style="left:452px; height:400px; top:60px;" title="MLK Day"><span class="holiday-icon">✊</span></div>
+                <div class="holiday-marker" style="left:522px; height:400px; top:60px;" title="Presidents Day"><span class="holiday-icon">🎩</span></div>
+                <div class="holiday-marker" style="left:780px; height:400px; top:60px;" title="Memorial Day"><span class="holiday-icon">🇺🇸</span></div>
+                <div class="holiday-marker" style="left:885px; height:400px; top:60px;" title="Independence Day"><span class="holiday-icon">🎆</span></div>
+                <div class="holiday-marker" style="left:1056px; height:400px; top:60px;" title="Labor Day"><span class="holiday-icon">🇺🇸</span></div>
+                <div class="holiday-marker" style="left:1266px; height:400px; top:60px;" title="Thanksgiving"><span class="holiday-icon">🦃</span></div>
+                <div class="holiday-marker" style="left:1342px; height:400px; top:60px;" title="Christmas"><span class="holiday-icon">🎄</span></div>
+                <div class="today-line" style="left:449px; height:400px; top:60px;"></div>
             </div>
         </div>
     </div>
